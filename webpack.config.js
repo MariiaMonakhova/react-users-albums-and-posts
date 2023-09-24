@@ -16,6 +16,10 @@ module.exports = {
           loader: 'babel-loader',
         },
       },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
     ],
   },
   plugins: [
@@ -28,5 +32,5 @@ module.exports = {
     static: path.join(__dirname, 'build'),
     compress: true,
     port: 3000,
-  }
+  },
 };

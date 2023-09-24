@@ -1,0 +1,44 @@
+.users_list,
+.posts_list,
+.album_list {
+  margin-top: 50px;
+}
+
+.users_page,
+.users_details_page,
+.post_comments_page,
+.album_content_page,
+.page_not_found,
+.photo-cards,
+.post_comments_page,
+.comment-card {
+  margin-top: 20px;
+}
+
+.search {
+  margin-bottom: 20px;
+}
+
+.album-item,
+.posts-item {
+  margin-bottom: 10px;
+}
+
+.nav_links,
+.photo-photo {
+  margin-top: 20px;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+.photo-cards {
+  display: flex;
+  justify-content: center;
+}
+
+.photo-card {
+  margin: 10px 20px;
+}

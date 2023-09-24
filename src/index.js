@@ -1,11 +1,13 @@
 import ReactDOM from "react-dom/client";
+import { HashRouter as Router } from "react-router-dom";
+import { App } from './App.js';
 
-function App() {
-  return (
-    <h1>Hello World!!</h1>
-  );
-}
+const Root = () => (
+  <Router>
+    <App />
+  </Router>
+)
 
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
-root.render(<App />);
+root.render(<Root />);
