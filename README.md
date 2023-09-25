@@ -1,9 +1,9 @@
 # React.js Users Posts and Albums
 
-On the main page we can see users table where we can find a user by Search field, and sort users by id, name, username and email.
-If we click on the user name we will be able to find posts and albums that that user owns. Switching between two tabs (Posts and Albums) we can choose one of the posts or albums to see comments (for posts) and photos (for albums).
+On the main page, we can see the users table where we can find a user by Search field, and sort users by id, name, username, and email.
+If we click on the user name, we can find posts and albums that that user owns. Switching between two tabs (Posts and Albums) we can choose one of the posts or albums to see comments (for posts) and photos (for albums).
 
-You can also share the link from whereever and everything will be saved.
+You can also share the link from wherever and everything will be saved.
 
 Here is [DEMO](https://mariiamonakhova.github.io/react-users-albums-and-posts/)
 
