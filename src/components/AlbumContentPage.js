@@ -1,8 +1,8 @@
-import { Card, Container, Row } from 'react-bootstrap';
-import { getAlbumsPhotos } from '../api/photos';
-import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { Loader } from './Loader';
+import { Card, Container, Row } from "react-bootstrap";
+import { getAlbumsPhotos } from "../api/photos";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Loader } from "./Loader";
 
 export const AlbumContentPage = () => {
   const { albumId } = useParams();
@@ -19,8 +19,6 @@ export const AlbumContentPage = () => {
       .finally(() => setLoading(false));
   }, [albumId]);
 
-  console.log(photos);
-
   if (showError) {
     return <p>Something went wrong</p>;
   }
@@ -33,7 +31,7 @@ export const AlbumContentPage = () => {
       ) : (
         <Row xs={1} md={2} className="g-4 photo-cards">
           {photos.map((photo) => (
-            <Card style={{ width: '18rem' }} className='photo-card' key={photo.id}>
+            <Card style={{ width: "18rem" }} className='photo-card' key={photo.id}>
               <Card.Img className="photo-photo" alt={photo.title} variant="top" src={photo.thumbnailUrl} />
               <Card.Body>
                 <Card.Title>{photo.title}</Card.Title>

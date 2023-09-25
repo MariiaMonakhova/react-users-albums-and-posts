@@ -24,6 +24,11 @@
   margin-bottom: 10px;
 }
 
+.album-item:hover,
+.posts-item:hover {
+  background-color: rgb(212, 212, 212);
+}
+
 .nav_links,
 .photo-photo {
   margin-top: 20px;

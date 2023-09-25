@@ -1,13 +1,13 @@
-import { Routes, Route } from 'react-router-dom';
-import { Container } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '@fortawesome/fontawesome-free/css/all.css';
-import { UsersPage } from './components/UsersPage';
-import './App.css';
-import { UserDetailsPage } from './components/UserDetails';
-import { PostCommentsPage } from './components/PostCommentsPage';
-import { PageNotFound } from './components/PageNotFound';
-import { AlbumContentPage } from './components/AlbumContentPage';
+import { Routes, Route } from "react-router-dom";
+import { Container } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "@fortawesome/fontawesome-free/css/all.css";
+import { UsersPage } from "./components/UsersPage";
+import "./App.css";
+import { UserDetailsPage } from "./components/UserDetails";
+import { PostCommentsPage } from "./components/PostCommentsPage";
+import { PageNotFound } from "./components/PageNotFound";
+import { AlbumContentPage } from "./components/AlbumContentPage";
 
 export const App = () => (
   <Container className="App">

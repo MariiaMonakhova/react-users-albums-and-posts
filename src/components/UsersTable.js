@@ -2,24 +2,25 @@ import { Link, useSearchParams } from "react-router-dom";
 import { UserLink } from "./UserLink";
 import { Table } from "react-bootstrap";
 import { getSearchWith } from "../utils/searchHelper";
+import { useCallback } from "react";
 
 const sortOptions = [
-  { title: 'Id', value: 'id' },
-  { title: 'Name', value: 'name' },
-  { title: 'Username', value: 'username' },
-  { title: 'Email', value: 'email' },
+  { title: "Id", value: "id" },
+  { title: "Name", value: "name" },
+  { title: "Username", value: "username" },
+  { title: "Email", value: "email" },
 ];
 
 export const UserTable = ({ users }) => {
   const [searchParams] = useSearchParams();
-  const order = searchParams.get('order') || '';
-  const sort = searchParams.get('sort') || '';
+  const order = searchParams.get("order") || "";
+  const sort = searchParams.get("sort") || "";
 
-  const sortBy = (newSortType) => {
+  const sortBy = useCallback((newSortType) => {
     let sortParams = {};
     const firstClick = newSortType !== sort;
-    const secondClick = newSortType === sort && order !== 'desc';
-    const thirdClick = newSortType === sort && order === 'desc';
+    const secondClick = newSortType === sort && order !== "desc";
+    const thirdClick = newSortType === sort && order === "desc";
 
     if (firstClick) {
       sortParams = {
@@ -29,18 +30,19 @@ export const UserTable = ({ users }) => {
 
     if (secondClick) {
       sortParams = {
-        order: 'desc',
+        order: "desc",
       };
     }
 
     if (thirdClick) {
       sortParams = {
-        sort: null, order: null,
+        sort: null,
+        order: null,
       };
     }
 
     return getSearchWith(searchParams, sortParams);
-  };
+  }, [searchParams, sort, order]);
 
   if (users.length === 0) {
     return <p>There are no people matching the current search criteria</p>;
@@ -62,7 +64,7 @@ export const UserTable = ({ users }) => {
                   <span className="icon">
                     {sort !== option.value ? (
                       <i className="fas fa-sort" />
-                    ) : order === 'desc' && sort === option.value ? (
+                    ) : order === "desc" && sort === option.value ? (
                       <i className="fas fa-sort-down" />
                     ) : (
                       <i className="fas fa-sort-up" />

@@ -4,7 +4,7 @@ import { getSearchWith } from "../utils/searchHelper";
 
 export const UsersFilter = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const query = searchParams.get('query') || '';
+  const query = searchParams.get("query") || "";
 
   const handleQueryChange = (event) => {
     const newQuery = event.target.value.trim() || null;

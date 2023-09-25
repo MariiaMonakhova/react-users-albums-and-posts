@@ -1,8 +1,8 @@
-import { Card, Container } from 'react-bootstrap';
-import { getPostsComments } from '../api/comments';
-import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { Loader } from './Loader';
+import { Card, Container } from "react-bootstrap";
+import { getPostsComments } from "../api/comments";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Loader } from "./Loader";
 
 export const PostCommentsPage = () => {
   const { postId } = useParams();

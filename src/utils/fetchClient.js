@@ -1,4 +1,4 @@
-const BASE_URL = 'https://jsonplaceholder.typicode.com';
+const BASE_URL = "https://jsonplaceholder.typicode.com";
 
 function wait(delay) {
   return new Promise((resolve) => {
@@ -8,7 +8,7 @@ function wait(delay) {
 
 function request(
   url,
-  method = 'GET',
+  method = "GET",
   data = null,
 ) {
   const options = { method };
@@ -16,7 +16,7 @@ function request(
   if (data) {
     options.body = JSON.stringify(data);
     options.headers = {
-      'Content-Type': 'application/json; charset=UTF-8',
+      "Content-Type": "application/json; charset=UTF-8",
     };
   }
 
@@ -27,7 +27,7 @@ function request(
 
 export const client = {
   get: (url) => request(url),
-  post: (url, data) => request(url, 'POST', data),
-  patch: (url, data) => request(url, 'PATCH', data),
-  delete: (url) => request(url, 'DELETE'),
+  post: (url, data) => request(url, "POST", data),
+  patch: (url, data) => request(url, "PATCH", data),
+  delete: (url) => request(url, "DELETE"),
 };

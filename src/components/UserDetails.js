@@ -5,13 +5,13 @@ import { PostsContent } from "./PostsContent";
 import { AlbumsContent } from "./AlbumsContent";
 
 const tabOption = [
-  {id: 'posts', content: 'Posts'},
-  {id: 'albums', content: 'Albums'},
+  {id: "posts", content: "Posts"},
+  {id: "albums", content: "Albums"},
 ];
 
 export const UserDetailsPage = () => {
   const { userId } = useParams();
-  const [activeTab, setActiveTab] = useState('Posts');
+  const [activeTab, setActiveTab] = useState("Posts");
 
   return (
     <Container className="users_details_page">
@@ -37,9 +37,9 @@ export const UserDetailsPage = () => {
 
       {activeTab === "Posts" ? (
         <PostsContent />
-      ) : activeTab === 'Albums' ? (
+      ) : activeTab === "Albums" ? (
         <AlbumsContent />
       ) : null}
     </Container>
   );
-}
+};

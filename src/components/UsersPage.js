@@ -12,9 +12,9 @@ export const UsersPage = () => {
   const [showError, setShowError] = useState(false);
   const [loading, setLoading] = useState(true);
   const [searchParams] = useSearchParams();
-  const query = searchParams.get('query') || '';
-  const order = searchParams.get('order') || '';
-  const sort = searchParams.get('sort') || '';
+  const query = searchParams.get("query") || "";
+  const order = searchParams.get("order") || "";
+  const sort = searchParams.get("sort") || "";
 
   useEffect(() => {
     setLoading(true);
@@ -50,4 +50,4 @@ export const UsersPage = () => {
       )}
     </Container>
   );
-}
+};

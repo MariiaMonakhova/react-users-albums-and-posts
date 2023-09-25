@@ -24,7 +24,7 @@ export const PostsContent = () => {
   }
 
   if (loading) {
-    return <Loader />
+    return <Loader />;
   }
 
   return (
@@ -36,4 +36,4 @@ export const PostsContent = () => {
       ))}
     </ListGroup>
   );
-}
+};

@@ -1,5 +1,5 @@
-import { Link, useSearchParams } from 'react-router-dom';
-import { getSearchWith } from '../utils/searchHelper';
+import { Link, useSearchParams } from "react-router-dom";
+import { getSearchWith } from "../utils/searchHelper";
 
 export const SearchLink = ({ children, params, ...props }) => {
   const [searchParams] = useSearchParams();

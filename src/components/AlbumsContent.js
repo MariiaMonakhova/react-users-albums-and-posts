@@ -1,8 +1,8 @@
-import { ListGroup } from 'react-bootstrap';
-import { Link, useParams } from 'react-router-dom';
-import { Loader } from './Loader';
-import { useEffect, useState } from 'react';
-import { getUserAlbums } from '../api/albums';
+import { ListGroup } from "react-bootstrap";
+import { Link, useParams } from "react-router-dom";
+import { Loader } from "./Loader";
+import { useEffect, useState } from "react";
+import { getUserAlbums } from "../api/albums";
 
 export const AlbumsContent = () => {
   const { userId } = useParams();
@@ -36,4 +36,4 @@ export const AlbumsContent = () => {
       ))}
     </ListGroup>
   );
-}
+};
