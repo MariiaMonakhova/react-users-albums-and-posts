@@ -34,7 +34,7 @@ export const AlbumContentPage = () => {
         <Row xs={1} md={2} className="g-4 photo-cards">
           {photos.map((photo) => (
             <Card style={{ width: '18rem' }} className='photo-card' key={photo.id}>
-              <Card.Img className="photo-photo" variant="top" src={photo.thumbnailUrl} />
+              <Card.Img className="photo-photo" alt={photo.title} variant="top" src={photo.thumbnailUrl} />
               <Card.Body>
                 <Card.Title>{photo.title}</Card.Title>
               </Card.Body>
