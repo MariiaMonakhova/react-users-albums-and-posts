@@ -4,7 +4,7 @@ import { Loader } from './Loader';
 import { useEffect, useState } from 'react';
 import { getUserAlbums } from '../api/albums';
 
-export function AlbumsContent() {
+export const AlbumsContent = () => {
   const { userId } = useParams();
   const [albums, setAlbums] = useState([]);
   const [showError, setShowError] = useState(false);

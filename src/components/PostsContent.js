@@ -4,7 +4,7 @@ import { Loader } from "./Loader";
 import { useEffect, useState } from "react";
 import { getUserPosts } from "../api/posts";
 
-export function PostsContent() {
+export const PostsContent = () => {
   const { userId } = useParams();
   const [posts, setPosts] = useState([]);
   const [showError, setShowError] = useState(false);
