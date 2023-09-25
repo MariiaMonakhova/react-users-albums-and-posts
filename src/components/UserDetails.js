@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Container, Nav } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import { PostsContent } from "./PostsContent";
 import { AlbumsContent } from "./AlbumsContent";
+import { getSearchWith } from "../utils/searchHelper";
 
 const tabOption = [
   {id: "posts", content: "Posts"},
@@ -11,11 +12,27 @@ const tabOption = [
 
 export const UserDetailsPage = () => {
   const { userId } = useParams();
-  const [activeTab, setActiveTab] = useState("Posts");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [activeTab, setActiveTab] = useState("posts");
+
+  useEffect(() => {
+    const contentParam = searchParams.get("content");
+    if (contentParam) {
+      setActiveTab(contentParam || activeTab);
+    }
+  }, [searchParams, activeTab]);
+
+  function handleTabChange(tabId) {
+    setActiveTab(tabId);
+
+    const tab = getSearchWith(searchParams, { content: tabId });
+
+    setSearchParams(tab);
+  }
 
   return (
     <Container className="users_details_page">
-      <h1>{activeTab} of user {userId}</h1>
+      <h1>{activeTab === "albums" ? "Albums" : "Posts"} of user {userId}</h1>
 
       <Nav
         variant="tabs"
@@ -23,11 +40,11 @@ export const UserDetailsPage = () => {
         className="nav_links"
       >
       {tabOption.map(tab => (
-        <Nav.Item key={tab.content}>
+        <Nav.Item key={tab.id}>
           <Nav.Link
-          eventKey={tab.content}
+            eventKey={tab.id}
             to={`../${tab.id}`}
-            onClick={() => setActiveTab(tab.content)}
+            onClick={() => handleTabChange(tab.id)}
           >
             {tab.content}
           </Nav.Link>
@@ -35,9 +52,9 @@ export const UserDetailsPage = () => {
       ))}
       </Nav>
 
-      {activeTab === "Posts" ? (
+      {activeTab === "posts" ? (
         <PostsContent />
-      ) : activeTab === "Albums" ? (
+      ) : activeTab === "albums" ? (
         <AlbumsContent />
       ) : null}
     </Container>
