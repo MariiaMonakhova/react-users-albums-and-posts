@@ -55,7 +55,7 @@ export const UserTable = ({ users }) => {
           {sortOptions.map(option => (
             <th key={option.value}>
               <span>
-                {option.title}
+                {`${option.title} `}
                 <Link
                   to={{
                     search: sortBy(option.value),
